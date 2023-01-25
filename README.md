@@ -1,5 +1,25 @@
 # Example: django から S3 へ画像をアップロード
 
+## Django プロジェクトの作成
+
+必要に応じて仮想環境作成。
+
+```
+python3 -m venv venv
+```
+
+Django プロジェクトの作成。
+
+```
+django-admin startproject myconfig .
+```
+
+Django App の作成。
+
+```
+python manage.py startapp myapp
+```
+
 ## 必要なライブラリのインストール
 
 ```
@@ -30,3 +50,19 @@ AWS_STORAGE_BUCKET_NAME=xxx
 ```
 
 ## Django の設定
+
+今回変更したファイルは以下の通り。
+
+- [myconfig/settings.py](https://github.com/takux/example-django-s3/blob/main/myconfig/settings.py)
+- [myconfig/urls.py](https://github.com/takux/example-django-s3/blob/main/myconfig/urls.py)
+- [myapp/views.py](https://github.com/takux/example-django-s3/blob/main/myapp/views.py)
+
+## 画像の準備
+
+今回は仮に用意したプロジェクト直下の `screenshot.png` の画像を使用。
+
+## 実行
+
+`python manage.py runserver` して http://localhost:8000/upload/ にアクセスで、S3 に画像（screentshot.png）がアップロード。
+
+![S3に反映された様子](https://user-images.githubusercontent.com/53621441/214451133-bfcec997-e319-4c10-b467-c0704fba7151.png)
