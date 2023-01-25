@@ -1,4 +1,4 @@
-# Example: django から S3 へ画像をアップロード
+# Django から S3 へ画像をアップロードする Example
 
 ## Django プロジェクトの作成
 
